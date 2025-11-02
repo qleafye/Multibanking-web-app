@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Файлы с секретами (на всякий случай)
+.env
