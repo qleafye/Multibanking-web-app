@@ -1,8 +1,6 @@
-package com.studfi.backend.client.vbank.dto.account;
+package com.studfi.backend.client.abank.dto.account;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class VBankAccountDto {
+public class ABankAccountDto {
     private String accountId;
     private String currency;
     private String accountType;

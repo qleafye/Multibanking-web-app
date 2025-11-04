@@ -12,7 +12,7 @@ def fetch_transactions_from_java_api() -> (list, str | None):
     """
     print(f"Подключаемся к Java API по адресу: {JAVA_API_TRANSACTIONS_URL}")
     try:
-        response = requests.get(JAVA_API_TRANSACTIONS_URL, timeout=5)  # таймаут 5 секунд
+        response = requests.get(JAVA_API_TRANSACTIONS_URL, timeout=15)  # таймаут 5 секунд
         response.raise_for_status()  # Вызовет ошибку, если статус не 2xx
 
         transactions = response.json()

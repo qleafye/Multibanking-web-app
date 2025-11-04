@@ -1,12 +1,11 @@
 package com.studfi.backend.dto;
 
-// Наш внутренний, унифицированный класс для банковского счёта.
-// Неважно, как счёт выглядит в API VBank или ABank, внутри нашей системы он будет таким.
 public class Account {
     private String accountId;
-    private String bankName; // Добавим поле, чтобы знать, из какого банка этот счёт
+    private String bankName;
+    private String accountType;
+    private double balance;
 
-    // Конструкторы, геттеры и сеттеры - стандартные блоки для Java DTO
     public Account(String accountId, String bankName) {
         this.accountId = accountId;
         this.bankName = bankName;
@@ -26,5 +25,21 @@ public class Account {
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
