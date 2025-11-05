@@ -1,6 +1,12 @@
 from fastapi import FastAPI
-from models import AnalyzeRequest, AnalyzeResponse, Summary, AnalysisMode
-from logic import find_subscriptions, enrich_with_pro_data, calculate_potential_savings
+from models import (
+    AnalyzeRequest, 
+    AnalyzeResponse, 
+    Subscription, 
+    ProSuggestion,
+    AnalysisMode
+)
+from logic import find_subscriptions, enrich_with_pro_data
 
 app = FastAPI(
     title="StudFi Analyst Service",
@@ -13,31 +19,22 @@ def read_root():
     """Простой эндпоинт для проверки работоспособности сервиса."""
     return {"status": "ok"}
 
-@app.post("/analyze", response_model=AnalyzeResponse, tags=["Analysis"])
+@app.post("/analyze", response_model=AnalyzeResponse)
 def analyze_transactions(request: AnalyzeRequest):
     """
-    Принимает список транзакций и режим (free/pro).
-    Возвращает детализированный анализ найденных подписок.
+    Анализирует транзакции, находит подписки и обогащает их данными
+    в зависимости от выбранного режима (free/pro).
     """
-    # Шаг 1: Найти все подписки на основе транзакций. Это общий шаг для обоих режимов.
+    # Шаг 1: Найти все возможные подписки
     found_subscriptions = find_subscriptions(request.transactions)
-    
-    # Шаг 2: Рассчитать всю возможную экономию. Это будет использоваться как тизер в сводке.
-    potential_savings = calculate_potential_savings(found_subscriptions)
-    
-    # Шаг 3: Если режим "pro", обогатить данные о подписках лайфхаками и альтернативами.
-    if request.mode == AnalysisMode.PRO:
-        found_subscriptions = enrich_with_pro_data(found_subscriptions)
-        
-    # Шаг 4: Создать объект сводки. `potential_savings_pro` включается во все ответы.
-    summary = Summary(
-        total_subscriptions_found=len(found_subscriptions),
-        total_monthly_cost=round(sum(sub.monthly_cost for sub in found_subscriptions), 2),
-        potential_savings_pro=potential_savings
+
+    # Шаг 2: Обогатить данные в зависимости от режима
+    enriched_subscriptions, pro_suggestions = enrich_with_pro_data(
+        found_subscriptions, request.mode
     )
-    
-    # Шаг 5: Собрать и вернуть финальный объект ответа.
+
+    # Шаг 3: Сформировать и вернуть ответ
     return AnalyzeResponse(
-        summary=summary,
-        subscriptions=found_subscriptions
+        subscriptions=enriched_subscriptions,
+        pro_version_suggestions=pro_suggestions if request.mode == AnalysisMode.PRO else []
     )

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
 from enum import Enum
 
@@ -16,9 +16,10 @@ class AnalysisMode(str, Enum):
     PRO = "pro"
 
 class AnalyzeRequest(BaseModel):
-    """Модель для основного запроса на анализ."""
-    transactions: List[TransactionInput]  # Список транзакций для анализа
-    mode: AnalysisMode = AnalysisMode.FREE  # Режим по умолчанию - "free"
+    """Модель запроса на анализ транзакций."""
+    transactions: list[TransactionInput]
+    # Добавляем поле для режима с дефолтным значением "free"
+    mode: AnalysisMode = AnalysisMode.FREE
 
 # --- Выходные модели (данные, которые мы возвращаем клиенту) ---
 
@@ -34,15 +35,23 @@ class Alternative(BaseModel):
     cost: float  # Стоимость альтернативы
     pitch: str  # Короткое продающее описание
 
+class PotentialSaving(BaseModel):
+    """Модель для потенциальной экономии."""
+    saving_amount: float  # Сколько можно сэкономить
+
 class Subscription(BaseModel):
-    """Модель для одной найденной подписки."""
+    """Модель найденной подписки."""
     name: str  # Человекочитаемое название (например, "Яндекс.Плюс")
     monthly_cost: float  # Стоимость подписки в месяц
     logo_url: str  # URL логотипа сервиса
+    # Делаем это поле опциональным, чтобы его не было в free-режиме
+    potential_savings: PotentialSaving | None = None
 
-    # Поля для Pro-версии. `Optional` означает, что они могут отсутствовать.
-    alternatives: Optional[List[Alternative]] = None
-    hacks: Optional[List[Hack]] = None
+class ProSuggestion(BaseModel):
+    """Модель для предложения Pro-версии."""
+    name: str  # Название сервиса
+    cost: float  # Стоимость
+    suggestion: str  # Короткое продающее описание
 
 class Summary(BaseModel):
     """Сводная информация по результатам анализа."""
@@ -51,6 +60,7 @@ class Summary(BaseModel):
     potential_savings_pro: float  # Потенциальная экономия (показывается даже в free-режиме как тизер)
 
 class AnalyzeResponse(BaseModel):
-    """Основная модель ответа, которая объединяет сводку и список подписок."""
-    summary: Summary
-    subscriptions: List[Subscription]
+    """Модель ответа с результатами анализа."""
+    subscriptions: list[Subscription]
+    # Делаем это поле опциональным, чтобы его не было в free-режиме
+    pro_version_suggestions: list[ProSuggestion] | None = None

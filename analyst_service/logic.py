@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 from typing import List
-from models import TransactionInput, Subscription
+from .models import TransactionInput, Subscription, PotentialSaving, ProSuggestion, AnalysisMode
 import os
 
 # --- Загрузка базы знаний ---
@@ -9,7 +9,7 @@ import os
 _DIR = os.path.dirname(os.path.abspath(__file__))
 KNOWLEDGE_BASE_PATH = os.path.join(_DIR, 'knowledge_base.json')
 
-# Загружаем нашу "базу знаний" о подписках один раз при старте сервиса.
+# Загружаем базу знаний один раз при старте
 with open(KNOWLEDGE_BASE_PATH, 'r', encoding='utf-8') as f:
     KNOWLEDGE_BASE = json.load(f)
 
@@ -44,34 +44,50 @@ def find_subscriptions(transactions: List[TransactionInput]) -> List[Subscriptio
             
     return found_subscriptions
 
-def enrich_with_pro_data(subscriptions: List[Subscription]) -> List[Subscription]:
+def enrich_with_pro_data(subscriptions: List[Subscription], mode: AnalysisMode) -> tuple[List[Subscription], List[ProSuggestion]]:
     """
-    Обогащает список найденных подписок Pro-данными (альтернативы и лайфхаки)
-    из базы знаний. Это ядро Pro-аналитики.
+    Обогащает найденные подписки данными из Pro-версии (экономия, советы).
+    В 'free' режиме возвращает пустые списки.
     """
-    for sub in subscriptions:
-        # Находим соответствующее ключевое слово в базе знаний по имени подписки
-        keyword = next((kw for kw, data in KNOWLEDGE_BASE.items() if data['name'] == sub.name), None)
-        if keyword:
-            pro_data = KNOWLEDGE_BASE[keyword]
-            # Прикрепляем альтернативы и лайфхаки, если они существуют
-            if pro_data.get('alternatives'):
-                sub.alternatives = pro_data['alternatives']
-            if pro_data.get('hacks'):
-                sub.hacks = pro_data['hacks']
-    
-    return subscriptions
+    # Если режим бесплатный, ничего не делаем
+    if mode == AnalysisMode.FREE:
+        return subscriptions, []
 
-def calculate_potential_savings(subscriptions: List[Subscription]) -> float:
-    """
-    Рассчитывает общую потенциальную экономию от всех лайфхаков для найденных подписок.
-    Это значение используется как тизер в сводке для всех режимов.
-    """
-    total_savings = 0.0
+    # Логика Pro-режима
+    pro_suggestions = []
+    enriched_subscriptions = []
+
     for sub in subscriptions:
-        keyword = next((kw for kw, data in KNOWLEDGE_BASE.items() if data['name'] == sub.name), None)
-        if keyword:
-            hacks = KNOWLEDGE_BASE[keyword].get('hacks', [])
-            for hack in hacks:
-                total_savings += hack.get('saving_per_month', 0.0)
-    return round(total_savings, 2)
+        # Ищем информацию о подписке в базе знаний
+        service_info = next((item for item in KNOWLEDGE_BASE["services"] if item["name"].lower() in sub.name.lower()), None)
+        
+        if service_info:
+            # Добавляем информацию о возможной экономии
+            if "alternative" in service_info:
+                alternative = service_info["alternative"]
+                saving = sub.amount - alternative["price"]
+                if saving > 0:
+                    sub.potential_savings = PotentialSaving(
+                        service_name=alternative["name"],
+                        saving_amount=round(saving, 2)
+                    )
+            
+            # Добавляем Pro-советы
+            if "pro_suggestion" in service_info:
+                pro_suggestions.append(ProSuggestion(
+                    service_name=sub.name,
+                    suggestion=service_info["pro_suggestion"]
+                ))
+        
+        enriched_subscriptions.append(sub)
+
+    return enriched_subscriptions, pro_suggestions
+
+def calculate_potential_savings(subscriptions: List[Subscription]) -> list[Subscription]:
+    """
+    Рассчитывает потенциальную экономию для каждой подписки.
+    Эта функция больше не нужна, так как логика переехала в enrich_with_pro_data.
+    Оставляем ее пустой или удаляем. Для чистоты кода лучше удалить.
+    """
+    # Логика перенесена
+    return subscriptions
