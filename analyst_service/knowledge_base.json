@@ -1,0 +1,41 @@
+{
+  "YANDEX.PLUS": {
+    "name": "Яндекс.Плюс",
+    "monthly_cost": 299,
+    "logo_url": "https://example.com/yandex.png",
+    "alternatives": [
+      {
+        "name": "VK Комбо",
+        "cost": 169,
+        "pitch": "Дешевле и включает скидки на такси и еду"
+      }
+    ],
+    "hacks": [
+      {
+        "name": "Годовой тариф",
+        "saving_per_month": 132,
+        "pitch": "Купите годовую подписку за 1990₽ и экономьте 132₽ каждый месяц!"
+      }
+    ]
+  },
+  "IVI.RU": {
+    "name": "Иви",
+    "monthly_cost": 399,
+    "logo_url": "https://example.com/ivi.png",
+    "alternatives": [
+      {
+        "name": "Кинопоиск HD",
+        "cost": 0,
+        "pitch": "Уже включен в ваш Яндекс.Плюс!"
+      }
+    ],
+    "hacks": []
+  },
+  "VK COMBO": {
+    "name": "VK Комбо",
+    "monthly_cost": 169,
+    "logo_url": "https://example.com/vk.png",
+    "alternatives": [],
+    "hacks": []
+  }
+}
