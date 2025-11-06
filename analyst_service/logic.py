@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 from typing import List
-from .models import TransactionInput, Subscription, PotentialSaving, ProSuggestion, AnalysisMode
+from models import TransactionInput, Subscription, PotentialSaving, ProSuggestion, AnalysisMode
 import os
 
 # --- Загрузка базы знаний ---

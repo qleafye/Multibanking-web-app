@@ -5,6 +5,7 @@ import com.studfi.backend.dto.Transaction;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AnalysisService {
@@ -19,13 +20,33 @@ public class AnalysisService {
         this.bankClients = bankClients;
     }
 
-    public List<Transaction> getAllTransactionsFromAllBanks() {
+    // --- НОВЫЙ МЕТОД, который принимает список банков для фильтрации ---
+    public List<Transaction> getAllTransactionsFromAllBanks(List<String> requestedBanks) {
+        List<BankClient> clientsToProcess;
+
+        // --- ЛОГИКА ФИЛЬТРАЦИИ ---
+        // Если параметр `banks` не пришел или пустой...
+        if (requestedBanks == null || requestedBanks.isEmpty()) {
+            // ...то используем ВСЕ доступные клиенты
+            clientsToProcess = this.bankClients;
+            System.out.println("Фильтр банков не применен. Работаем со всеми банками.");
+        } else {
+            // ...иначе, фильтруем наш список клиентов по именам
+            // Делаем сравнение без учета регистра для надежности
+            List<String> lowerCaseRequestedBanks = requestedBanks.stream()
+                    .map(String::toLowerCase)
+                    .collect(Collectors.toList());
+            clientsToProcess = this.bankClients.stream()
+                    .filter(client -> lowerCaseRequestedBanks.contains(client.getBankName().toLowerCase()))
+                    .collect(Collectors.toList());
+            System.out.println("Применен фильтр. Работаем с банками: " + requestedBanks);
+        }
+
         List<Transaction> allTransactions = new ArrayList<>();
 
-        // Пробегаемся по всем банкам
-        for (BankClient client : bankClients) {
+        // Пробегаемся уже по отфильтрованному списку клиентов
+        for (BankClient client : clientsToProcess) {
             System.out.println("--- Работаем с банком: " + client.getBankName() + " ---");
-            // Внутри каждого банка пробегаемся по всем нашим целевым клиентам
             for (String endUserClientId : targetClientIds) {
                 System.out.println("Получаем транзакции для клиента: " + endUserClientId);
                 allTransactions.addAll(client.getAllTransactionsForClient(endUserClientId));
