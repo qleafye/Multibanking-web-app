@@ -16,31 +16,31 @@ with open(KNOWLEDGE_BASE_PATH, 'r', encoding='utf-8') as f:
 def find_subscriptions(transactions: List[TransactionInput]) -> List[Subscription]:
     """
     Анализирует транзакции для поиска подписок.
-    Подписка считается найденной, если найдено 2 или более платежа,
-    совпадающих с ключевым словом из нашей базы знаний.
+    Подписка считается найденной, если есть хотя бы один платеж,
+    совпадающий с ключевым словом из нашей базы знаний.
     """
-    potential_subscriptions = defaultdict(list)
-    
-    # Группируем транзакции по ключевому слову подписки
-    for t in transactions:
-        for keyword in KNOWLEDGE_BASE.keys():
-            if keyword.lower() in t.description.lower():
-                potential_subscriptions[keyword].append(t)
-                break  # Переходим к следующей транзакции, как только нашли совпадение
-
     found_subscriptions = []
-    for keyword, trans_list in potential_subscriptions.items():
-        # Эвристика: подписка подтверждена, если было 2 или более платежей
-        if len(trans_list) >= 2:
-            sub_data = KNOWLEDGE_BASE[keyword]
-            # Создаем базовый объект подписки (без Pro-данных)
-            found_subscriptions.append(
-                Subscription(
-                    name=sub_data['name'],
-                    monthly_cost=sub_data['monthly_cost'],
-                    logo_url=sub_data['logo_url']
+    
+    # Используем set для хранения уже найденных подписок, чтобы избежать дублей
+    processed_keywords = set()
+
+    for t in transactions:
+        for keyword, sub_data in KNOWLEDGE_BASE.items():
+            # Проверяем, что ключевое слово есть в описании и мы еще не добавляли эту подписку
+            if keyword.lower() in t.description.lower() and keyword not in processed_keywords:
+                
+                # Создаем базовый объект подписки
+                found_subscriptions.append(
+                    Subscription(
+                        name=sub_data['name'],
+                        amount=t.amount, # Берем реальную сумму из транзакции
+                        last_payment_date=t.date # И реальную дату
+                    )
                 )
-            )
+                # Добавляем ключевое слово в обработанные, чтобы не искать его снова
+                processed_keywords.add(keyword)
+                # Переходим к следующей транзакции
+                break
             
     return found_subscriptions
 
@@ -49,45 +49,37 @@ def enrich_with_pro_data(subscriptions: List[Subscription], mode: AnalysisMode) 
     Обогащает найденные подписки данными из Pro-версии (экономия, советы).
     В 'free' режиме возвращает пустые списки.
     """
-    # Если режим бесплатный, ничего не делаем
+    # Если режим бесплатный, просто возвращаем как есть
     if mode == AnalysisMode.FREE:
         return subscriptions, []
 
     # Логика Pro-режима
     pro_suggestions = []
-    enriched_subscriptions = []
-
+    
     for sub in subscriptions:
-        # Ищем информацию о подписке в базе знаний
-        service_info = next((item for item in KNOWLEDGE_BASE["services"] if item["name"].lower() in sub.name.lower()), None)
+        # Ищем информацию о подписке в базе знаний по ее имени
+        # Нам нужно найти ключ ("YANDEX.PLUS"), зная значение ("Яндекс.Плюс")
+        keyword = next((k for k, v in KNOWLEDGE_BASE.items() if v["name"] == sub.name), None)
         
-        if service_info:
-            # Добавляем информацию о возможной экономии
-            if "alternative" in service_info:
-                alternative = service_info["alternative"]
-                saving = sub.amount - alternative["price"]
+        if keyword:
+            service_info = KNOWLEDGE_BASE[keyword]
+            # Добавляем информацию о возможной экономии (берем первую альтернативу)
+            if "alternatives" in service_info and service_info["alternatives"]:
+                alternative = service_info["alternatives"][0]
+                saving = sub.amount - alternative["cost"]
                 if saving > 0:
                     sub.potential_savings = PotentialSaving(
                         service_name=alternative["name"],
                         saving_amount=round(saving, 2)
                     )
             
-            # Добавляем Pro-советы
-            if "pro_suggestion" in service_info:
+            # Добавляем Pro-советы (берем первый лайфхак)
+            if "hacks" in service_info and service_info["hacks"]:
+                hack = service_info["hacks"][0]
                 pro_suggestions.append(ProSuggestion(
                     service_name=sub.name,
-                    suggestion=service_info["pro_suggestion"]
+                    suggestion=hack["pitch"]
                 ))
         
-        enriched_subscriptions.append(sub)
+    return subscriptions, pro_suggestions
 
-    return enriched_subscriptions, pro_suggestions
-
-def calculate_potential_savings(subscriptions: List[Subscription]) -> list[Subscription]:
-    """
-    Рассчитывает потенциальную экономию для каждой подписки.
-    Эта функция больше не нужна, так как логика переехала в enrich_with_pro_data.
-    Оставляем ее пустой или удаляем. Для чистоты кода лучше удалить.
-    """
-    # Логика перенесена
-    return subscriptions

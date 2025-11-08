@@ -1,33 +1,40 @@
 import requests
 import json
 
-# --- Настройки ---
-# URL Java-сервиса, который отдает все транзакции
-JAVA_BACKEND_URL = "http://localhost:8080/api/v1/transactions"
+# --- КОНФИГУРАЦИЯ ---
+# URL Java-сервиса, который отдает транзакции
+JAVA_SERVICE_URL = "http://localhost:8080/api/v1/transactions"
 
-# URL Python-сервиса, который принимает транзакции для анализа
+# URL Python-сервиса (FastAPI) для анализа
 ANALYST_SERVICE_URL = "http://127.0.0.1:8000/analyze"
 
-def run_full_analysis(mode: str = "pro"):
-    """
-    Выполняет полный цикл анализа:
-    1. Запрашивает транзакции у Java-бэкенда.
-    2. Отправляет их в сервис аналитики (FastAPI).
-    3. Печатает результат.
+# --- НОВАЯ СТРОКА: ЗДЕСЬ МЫ ВЫБИРАЕМ БАНКИ ---
+# Укажите нужные банки через запятую. Например: "sbank", "abank", "vbank".
+# Если оставить None, будут запрошены все банки.
+SELECTED_BANKS = "sbank" 
 
-    :param mode: Режим анализа ("free" или "pro").
+def run_integration_test():
     """
-    print("--- Шаг 1: Получение транзакций из Java-бэкенда ---")
+    Выполняет полный цикл интеграционного теста:
+    1. Запрашивает данные у Java-сервиса.
+    2. Отправляет их на анализ в Python-сервис.
+    3. Выводит результат.
+    """
+    print("Шаг 1: Запрос транзакций от Java-сервиса...")
+
     try:
-        response = requests.get(JAVA_BACKEND_URL, timeout=20)
-        # Проверяем, что запрос успешен (код 200)
-        response.raise_for_status()
-        transactions = response.json()
-        print(f"Успешно получено {len(transactions)} транзакций.")
+        # --- ИЗМЕНЕННАЯ СТРОКА: Добавляем параметры в запрос ---
+        params = {"banks": SELECTED_BANKS} if SELECTED_BANKS else None
+        response_java = requests.get(JAVA_SERVICE_URL, timeout=20, params=params)
+        
+        # Проверяем, что Java-сервис ответил успешно
+        response_java.raise_for_status()
+        
+        transactions = response_java.json()
+        print(f"  [Успех] Получено {len(transactions)} транзакций.")
+
     except requests.exceptions.RequestException as e:
-        print(f"\n!!! ОШИБКА: Не удалось подключиться к Java-бэкенду по адресу {JAVA_BACKEND_URL}")
-        print(f"Убедитесь, что Java-сервер запущен и отвечает.")
-        print(f"Детали ошибки: {e}")
+        print(f"  [ОШИБКА] Не удалось подключиться к Java-сервису: {e}")
         return
 
     print("\n--- Шаг 2: Отправка транзакций в сервис аналитики (FastAPI) ---")
@@ -35,7 +42,7 @@ def run_full_analysis(mode: str = "pro"):
     # Готовим данные для POST-запроса в соответствии с моделью AnalyzeRequest
     payload = {
         "transactions": transactions,
-        "mode": mode
+        "mode": "pro"
     }
 
     try:
@@ -56,7 +63,7 @@ def run_full_analysis(mode: str = "pro"):
 
 if __name__ == "__main__":
     # Запускаем анализ в "pro" режиме, чтобы увидеть все детали
-    run_full_analysis(mode="pro")
+    run_integration_test()
     
     # Если хотите протестировать бесплатный режим, измените на:
     # run_full_analysis(mode="free")
