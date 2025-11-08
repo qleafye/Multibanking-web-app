@@ -30,10 +30,16 @@ public class AnalysisController {
         this.consentService = consentService;
     }
 
-    // 1. Эндпоинт для анализа транзакций (для Python)
+    // --- ИЗМЕНЕННЫЙ МЕТОД ---
     @GetMapping("/transactions")
-    public List<Transaction> getTransactionsForAnalysis() {
-        return analysisService.getAllTransactionsFromAllBanks();
+    public List<Transaction> getTransactionsForAnalysis(
+            // Добавляем опциональный параметр `banks`.
+            // Spring сам распарсит строку "vbank,abank" в список строк.
+            // `required = false` означает, что если параметр не придет, ошибки не будет.
+            @RequestParam(required = false) List<String> banks
+    ) {
+        // Передаем полученный список в сервис
+        return analysisService.getAllTransactionsFromAllBanks(banks);
     }
 
     // --- 2. НОВЫЙ ЭНДПОИНТ ДЛЯ ПОЛУЧЕНИЯ "ОБОГАЩЕННЫХ" СЧЕТОВ ---
