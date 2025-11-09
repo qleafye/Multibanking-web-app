@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dfaf9b71-5771-4079-90e0-1b9d0631154f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FRONTEND_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ROADMAP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/knowledge_base.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyst_service/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/StudfiBackendApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/BankClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/ABankApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/account/ABankAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/account/ABankAccountListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/account/ABankBalanceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/account/ABankBalanceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/account/ABankDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/auth/ABankAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/consent/ABankConsentDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/consent/ABankConsentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/consent/ABankConsentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/product/ABankProductDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/product/ABankProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/product/ABankProductListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/transaction/ABankTransactionDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/transaction/ABankTransactionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/abank/dto/transaction/ABankTransactionListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/SBankApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/account/SBankAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/account/SBankAccountListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/account/SBankBalanceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/account/SBankBalanceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/account/SBankDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/auth/SBankAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/consent/SBankConsentDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/consent/SBankConsentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/consent/SBankConsentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/product/SBankProductDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/product/SBankProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/product/SBankProductListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/transaction/SBankTransactionDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/transaction/SBankTransactionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/sbank/dto/transaction/SBankTransactionListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/StudFiApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/account/StudFiAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/account/StudFiAccountListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/account/StudFiBalanceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/account/StudFiBalanceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/account/StudFiDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/auth/StudFiAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/consent/StudFiConsentDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/consent/StudFiConsentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/consent/StudFiConsentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/product/StudFiProductDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/product/StudFiProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/product/StudFiProductListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/transaction/StudFiTransactionDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/transaction/StudFiTransactionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/studfi/dto/transaction/StudFiTransactionListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/VBankApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/account/VBankAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/account/VBankAccountListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/account/VBankBalanceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/account/VBankBalanceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/account/VBankDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/auth/VBankAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/consent/VBankConsentDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/consent/VBankConsentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/consent/VBankConsentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/product/VBankProductDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/product/VBankProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/product/VBankProductListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/transaction/VBankTransactionDataDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/transaction/VBankTransactionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/client/vbank/dto/transaction/VBankTransactionListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/controller/AnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/dto/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/dto/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/service/AnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/service/ConsentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/api/accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/api/accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/services/consent_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/services/consent_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/our_bank/bank-in-a-box/shared/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/our_bank/bank-in-a-box/shared/database/init.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/backend">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/backend">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="backend" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="35CYXTy2ODhPhHkRS2PeUwZKW2W" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.backend [bootRun].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ksush/OneDrive/Desktop/code projects/STUDFI/Multibanking-web-app&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.backend [bootRun]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfaf9b71-5771-4079-90e0-1b9d0631154f" name="Changes" comment="" />
+      <created>1762615559360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762615559360</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
