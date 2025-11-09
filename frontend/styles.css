@@ -1,0 +1,133 @@
+/* Общие стили для всей страницы */
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #f0f2f5; /* Фоновый цвет, если картинка не загрузится */
+    /* Вы можете добавить сюда фоновую картинку, как в дизайне */
+    /* background-image: url('your-background-image.jpg'); */
+    background-size: cover;
+    color: #333;
+}
+
+/* --- Верхняя навигация --- */
+.main-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 999px; /* Делаем "пилюлю" */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 700;
+}
+
+.main-nav .cta-button {
+    background-color: #a3e635; /* Яркий зеленый */
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 800;
+}
+
+/* --- Карточка входа --- */
+.login-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* --- Элементы внутри карточки --- */
+.logo {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.logo-green {
+    color: #a3e635; /* Тот же зеленый */
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    border: none;
+    background-color: #f0f2f5;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не ломал ширину */
+}
+
+.login-form input::placeholder {
+    color: #999;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start; /* Прижать к левому краю */
+    margin-bottom: 10px;
+}
+
+.login-button {
+    background-color: #a3e635;
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #82b928; /* Чуть темнее при наведении */
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 700;
+}

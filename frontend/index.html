@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Simplyt</title>
+    <!-- Подключаем наш файл со стилями -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифты, чтобы было похоже на Figma -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Верхняя навигация -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#">как работает?</a>
+            <a href="#">преимущества</a>
+            <a href="#">связь с нами</a>
+            <a href="#" class="cta-button">Начать анализ</a>
+        </nav>
+    </header>
+
+    <!-- Главный контейнер для формы входа -->
+    <main class="login-container">
+        <div class="login-card">
+            <!-- Логотип (пока просто текст) -->
+            <h1 class="logo">Simply<span class="logo-green">t</span></h1>
+
+            <p class="subtitle">Войдите, используя логин или почту</p>
+
+            <!-- Сама форма -->
+            <form id="loginForm" class="login-form">
+                <input type="text" id="username" placeholder="Логин">
+                <input type="password" id="password" placeholder="Пароль">
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Запомнить меня</label>
+                </div>
+
+                <button type="submit" class="login-button">Вход</button>
+            </form>
+
+            <div class="form-footer">
+                <a href="#">стать клиентом</a>
+                <a href="#">забыли пароль?</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Сюда мы позже добавим крошечный скрипт -->
+    <script src="script.js"></script>
+
+</body>
+</html>
