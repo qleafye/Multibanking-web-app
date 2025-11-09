@@ -1,0 +1,832 @@
+/* --- Общие настройки --- */
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+}
+
+section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Определение анимации --- */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Начинает на 30px ниже */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Заканчивает в своей нормальной позиции */
+  }
+}
+
+/* --- Шапка сайта --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%; /* ИЗМЕНЕНО: Увеличены отступы для более крупного вида */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo, .logo-footer {
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.logo-green {
+    color: #a3e635;
+}
+
+.main-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 18px; /* ИЗМЕНЕНО: Увеличен шрифт ссылок */
+}
+
+.cta-button {
+    background-color: #a3e635;
+    color: #000;
+    padding: 12px 24px; /* ИЗМЕНЕНО: Кнопка стала крупнее */
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* --- Главный экран (Hero) --- */
+.hero {
+    padding: 40px 5% 0 5%;
+}
+
+.hero h1 {
+    font-size: 72px;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    line-height: 1.1;
+}
+
+.hero-image-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-image-bg {
+    position: absolute;
+    bottom: 0;
+
+    /* --- КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ --- */
+
+    /* 1. Ширина равна 100% ширины видимой области экрана */
+    width: 95vw;
+
+    /* 2. Смещаем блок влево на 50% ширины экрана... */
+    left: 50%;
+
+    /* 3. ...и затем двигаем его обратно на 50% его собственной ширины, чтобы он идеально центрировался */
+    transform: translateX(-50%);
+
+    /* -------------------------- */
+
+    height: 80%; /* Высота остается прежней */
+    background-color: #4C663C;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 90%;
+    height: auto;
+    /* ИЗМЕНЕНО: Применяем анимацию */
+    animation: floatUp 1.2s ease-out forwards;
+}
+
+
+/* --- Секция "Как работает?" --- */
+.how-it-works {
+    padding-top: 120px;
+}
+
+.how-it-works h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.wavy-line {
+    /* Родительский блок теперь сам будет занимать всю ширину */
+    width: 100vw;
+    position: relative; /* Нужно для правильного позиционирования */
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-bottom: 40px; /* Сохраняем отступ */
+}
+
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.how-it-works-grid h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+/* НОВЫЙ БЛОК СТИЛЕЙ */
+.how-it-works-grid p {
+    font-size: 18px; /* Увеличили размер текста под заголовком */
+}
+
+/* --- Секция "Преимущества" --- */
+.advantages h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.advantage-card .icon {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+
+.advantage-card h3 {
+    font-size: 20px;
+    color: #a3e635;
+}
+
+.advantage-card p {
+    color: #1a1a1a; /* Делаем текст черным, как основной текст на странице */
+}
+
+.advantages-image-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.advantages-image {
+    width: 100%;
+    border-radius: 24px;
+}
+
+/* --- Секция "Связь с нами" --- */
+.contact {
+    padding-bottom: 100px;
+    text-align: right; /* Выравниваем все содержимое секции по правому краю */
+}
+
+.contact h2 {
+    font-size: 48px;
+}
+
+/* --- Секция "Связь с нами" (ОБНОВЛЕННАЯ ВЕРСИЯ) --- */
+
+/* Возвращаем центрирование для заголовка секции */
+.contact {
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 48px;
+    margin-bottom: 40px; /* Увеличили отступ после заголовка */
+}
+
+/* Создаем двухколоночную сетку */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    gap: 700px; /* Расстояние между колонками */
+    max-width: 1100px; /* Ограничиваем ширину блока для лучшего вида */
+    margin: 0 auto; /* Центрируем сам блок в секции */
+    align-items: start; /* Выравниваем содержимое колонок по верху */
+}
+
+/* Стили для левой колонки ("наши telegram:") */
+.our-telegram {
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: underline;
+    text-align: right; /* Текст прижат вправо к центральной линии */
+    padding-right: 10px; /* Небольшой отступ от центра */
+    margin: 0; /* Убираем лишние отступы */
+    line-height: 1.8; /* Подгоняем высоту строки, чтобы она совпадала со ссылками */
+}
+
+/* Стили для правой колонки (список ников) */
+.telegram-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Прижимаем ссылки влево */
+    gap: 10px; /* Увеличили расстояние между никами */
+}
+
+.telegram-list a {
+    font-size: 24px;
+    color: #1a1a1a;
+    text-decoration: underline;
+    font-weight: 400; /* Делаем шрифт обычным, не жирным */
+
+    /* --- ШРИФТ КАК НА СТАРЫХ КОМПЬЮТЕРАХ --- */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- Подвал --- */
+.main-footer {
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-text {
+    display: flex;
+    gap: 30px;
+    color: #888;
+}
+
+/* styles.css */
+
+/* ... (здесь все ваши старые стили для главной страницы) ... */
+
+
+/*
+==========================================================================
+  СТИЛИ ДЛЯ СТРАНИЦЫ РЕЗУЛЬТАТОВ (СКОПИРОВАНО ИЗ FIGMA INSPECT)
+==========================================================================
+*/
+
+.results h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Контейнер для всех карточек */
+.subscriptions-grid {
+    display: grid;
+    /* Создаем сетку с 3 колонками, если позволяет место */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; /* Расстояние между карточками */
+    margin-top: 60px;
+}
+
+/* Стили для одной карточки подписки */
+.subscription-card {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6; /* Светлая рамка */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Легкая тень */
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Отступ между лого, текстом и блоком экономии */
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subscription-card:hover {
+    transform: translateY(-5px); /* Приподнимаем при наведении */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Логотип сервиса */
+.card-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain; /* Сохраняет пропорции лого */
+    flex-shrink: 0; /* Запрещает логотипу сжиматься */
+}
+
+/* Блок с названием и ценой */
+.card-info {
+    flex-grow: 1; /* Занимает все доступное место */
+}
+
+.card-title {
+    font-weight: 800;
+    font-size: 18px;
+    color: #111827;
+    margin: 0 0 4px 0; /* Убираем лишние отступы */
+}
+
+.card-cost {
+    font-weight: 400;
+    font-size: 16px;
+    color: #6B7280; /* Серый цвет для второстепенного текста */
+    margin: 0;
+}
+
+/* Блок с информацией об экономии */
+.card-saving {
+    background-color: #F0FDF4; /* Очень светлый зеленый фон */
+    color: #166534; /* Темно-зеленый текст */
+    border-radius: 999px; /* Делаем "пилюлю" */
+    padding: 8px 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.card-saving span {
+    font-size: 12px;
+    display: block; /* Чтобы текст был над числом */
+}
+
+.card-saving strong {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* --- ОБЩИЕ И БАЗОВЫЕ СТИЛИ --- */
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #F9FAFB; /* Общий фон для всех страниц */
+    color: #111827;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3, h4 { font-weight: 800; }
+p { line-height: 1.6; color: #6B7280; }
+
+.section-subtitle {
+    max-width: 500px;
+    margin: -10px auto 40px auto;
+}
+
+/* --- КОМПОНЕНТЫ: ШАПКА И ПОДВАЛ --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+}
+.logo { font-size: 32px; font-weight: 800; }
+.logo-green { color: #a3e635; }
+.main-nav a { text-decoration: none; color: #374151; font-weight: 700; font-size: 16px; }
+.cta-button { background-color: #a3e635; color: #1F2937; padding: 12px 24px; border-radius: 999px; font-weight: 800; text-decoration: none; }
+.main-footer { border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
+.footer-text { display: flex; gap: 30px; color: #888; }
+
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ВХОДА И РЕГИСТРАЦИИ --- */
+.auth-container { display: grid; place-items: center; min-height: 80vh; }
+.auth-card { background-color: white; padding: 40px; border-radius: 24px; border: 1px solid #E5E7EB; box-shadow: 0 8px 32px rgba(0,0,0,0.05); width: 380px; text-align: center; }
+.auth-card h1 { font-size: 36px; margin-bottom: 8px; }
+.auth-card .subtitle { color: #6B7280; margin-bottom: 32px; }
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+.auth-form input { border: 1px solid #D1D5DB; background-color: #F9FAFB; padding: 14px; border-radius: 12px; font-size: 16px; width: 100%; box-sizing: border-box; }
+.auth-form .primary-button { background-color: #a3e635; color: #1F2937; border: none; padding: 14px; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; }
+.auth-footer { display: flex; justify-content: center; gap: 24px; margin-top: 24px; }
+.auth-footer a { text-decoration: none; color: #4B5563; font-weight: 700; }
+
+
+/* --- СТИЛИ ДЛЯ ГЛАВНОГО ЭКРАНА (main-lite) --- */
+.dashboard { text-align: left; }
+.dashboard h1 { font-size: 36px; }
+.dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: flex-start; }
+.main-column { display: flex; flex-direction: column; gap: 32px; }
+.sidebar { display: flex; flex-direction: column; gap: 32px; }
+.stat-card, .upgrade-card, .pro-tip-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px; }
+.stat-card h4 { margin: 0 0 8px 0; color: #6B7280; font-size: 16px; }
+.stat-card .amount { font-size: 36px; font-weight: 800; }
+.stat-card .sub-amount { font-size: 18px; font-weight: 700; color: #10B981; }
+.upgrade-card { background-color: #1F2937; color: white; text-align: center; }
+.upgrade-card h3 { color: white; }
+.upgrade-card p { color: #9CA3AF; }
+.upgrade-card .primary-button { width: 100%; text-align: center; display: block; text-decoration: none; }
+.pro-tip-card h4 { margin: 0 0 16px 0; }
+.pro-tip-card .tip { display: flex; align-items: center; gap: 16px; }
+.pro-tip-card .tip-icon { font-size: 24px; }
+
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ПОДПИСОК (subs-lite) --- */
+.results h1 { font-size: 48px; margin-bottom: 10px; }
+.subscriptions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 60px; }
+.subscription-card { background: #FFFFFF; border: 1px solid #F3F4F6; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 16px; text-align: left; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.subscription-card:hover { transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); }
+.card-logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.card-info { flex-grow: 1; }
+.card-title { font-weight: 800; font-size: 18px; color: #111827; margin: 0 0 4px 0; }
+.card-cost { font-weight: 400; font-size: 16px; color: #6B7280; margin: 0; }
+.card-saving { background-color: #F0FDF4; color: #166534; border-radius: 999px; padding: 8px 16px; text-align: center; flex-shrink: 0; }
+.card-saving span { font-size: 12px; display: block; }
+.card-saving strong { font-size: 18px; font-weight: 800; }
+
+/* styles.css */
+
+/* ... все ваши старые стили ... */
+
+/* --- СТИЛИ ДЛЯ ФИЛЬТРА БАНКОВ --- */
+.bank-filter-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+}
+
+.bank-filter-container h4 {
+    margin: 0 0 16px 0;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- СТИЛИ ДЛЯ НОВЫХ КАРТОЧЕК БАНКОВ НА ГЛАВНОЙ --- */
+.bank-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+.bank-stats-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px;
+}
+.bank-stats-card h3 { margin: 0 0 16px 0; font-size: 20px; }
+.bank-stats-card p { margin: 4px 0; color: #6B7280; }
+.bank-stats-card strong { color: #111827; font-size: 18px; }
+.view-trans-btn {
+    margin-top: 16px;
+    background: none;
+    border: none;
+    color: #4F46E5; /* Фиолетовый */
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* --- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none; border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.transactions-list { list-style: none; padding: 0; }
+.transactions-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+.transactions-list .description { color: #333; }
+.transactions-list .amount { font-weight: 700; }
+
+/* --- СТИЛИ ДЛЯ АГРЕГИРОВАННОЙ КАРТОЧКИ --- */
+.aggregated-card {
+    border: 2px dashed #9CA3AF;
+    background-color: #F9FAFB;
+}
+.card-count-badge {
+    background-color: #E5E7EB;
+    color: #4B5563;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* --- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА (ДОПОЛНЕНИЕ) --- */
+.month-divider {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 18px;
+    color: #374151;
+}
+
+/* Стиль для самого первого заголовка месяца, чтобы не было лишнего отступа сверху */
+.month-divider:first-child {
+    margin-top: 0;
+}
+
+/* Позитивные и негативные транзакции */
+.transactions-list .amount.positive {
+    color: #16A34A; /* Зеленый */
+}
+.transactions-list .amount.negative {
+    color: #DC2626; /* Красный */
+}
+
+/* --- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА (ДОПОЛНЕНИЕ) --- */
+
+/* Делает технический ID в описании транзакции менее заметным */
+.transaction-id {
+    opacity: 0.5;
+    font-size: 0.9em; /* Можно сделать шрифт чуть меньше */
+    margin-left: 8px; /* Небольшой отступ от основного текста */
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ПОДПИСОК (ДОПОЛНЕНИЕ) --- */
+
+/* Контейнер для дополнительных опций фильтрации */
+.filter-options {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-options input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ СОВЕТОВ --- */
+
+.advices-grid {
+    display: grid;
+    /* Создаем сетку с 1 или 2 колонками в зависимости от ширины экрана */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.advice-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-left: 5px solid #a3e635; /* Яркий акцент слева */
+    box-shadow: 0px 4px M12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start; /* Иконка и текст будут на одном уровне сверху */
+    gap: 20px;
+}
+
+.advice-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 4px; /* Чуть опускаем иконку для лучшего выравнивания */
+}
+
+.advice-content {
+    flex-grow: 1;
+}
+
+.advice-title {
+    font-weight: 800;
+    font-size: 20px;
+    color: #111827;
+    margin: 0 0 4px 0;
+}
+
+.advice-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0 0 16px 0;
+}
+
+.advice-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+    margin: 0;
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ PRO-ВЕРСИИ --- */
+
+/* Стили для главного экрана (hero) */
+.pro-hero {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.pro-hero h1 {
+    font-size: 56px;
+    max-width: 800px;
+    margin: 20px auto 10px auto;
+}
+
+.pro-hero-image-container {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+}
+
+.pro-hero-image {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Стили для сетки преимуществ */
+.pro-features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
+}
+
+/* Стили для секции с тарифами */
+.pricing {
+    background-color: #F9FAFB; /* Светлый фон для выделения секции */
+    border-radius: 24px;
+    margin-top: 60px;
+}
+
+.pricing h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.pricing-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+}
+
+.pricing-card .price {
+    font-size: 48px;
+    font-weight: 800;
+    color: #111827;
+    margin: 10px 0;
+}
+
+.pricing-card .price span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+.pricing-description {
+    max-width: 350px;
+    margin: 0 auto 30px auto;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: left;
+    display: inline-block;
+}
+
+.features-list li {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.pricing-button {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* --- СТИЛИ ДЛЯ КАСТОМНЫХ ЧЕКБОКСОВ --- */
+
+/* 1. Скрываем стандартный вид чекбокса */
+.checkbox-group input[type="checkbox"],
+.filter-options input[type="checkbox"] {
+    -webkit-appearance: none; /* для Safari/Chrome */
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #D1D5DB; /* Серая рамка в неактивном состоянии */
+    border-radius: 0.35em; /* <<-- Скругленные края! */
+    transform: translateY(-0.075em);
+
+    display: inline-grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+/* 2. Рисуем "галочку" внутри с помощью псевдо-элемента */
+.checkbox-group input[type="checkbox"]::before,
+.filter-options input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0); /* Изначально "галочка" невидима */
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #fff; /* Белый цвет "галочки" */
+
+    /* Магия для рисования "галочки" */
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+/* 3. Когда чекбокс выбран - меняем фон и показываем "галочку" */
+.checkbox-group input[type="checkbox"]:checked,
+.filter-options input[type="checkbox"]:checked {
+    background-color: #a3e635; /* <<-- Ваш салатовый цвет! */
+    border-color: #a3e635;
+}
+
+.checkbox-group input[type="checkbox"]:checked::before,
+.filter-options input[type="checkbox"]:checked::before {
+    transform: scale(1); /* Делаем "галочку" видимой */
+}

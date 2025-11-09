@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Simplyt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">Simply<span class="logo-green">t</span></div>
+    <nav class="main-nav">
+        <a href="main-lite.html">Главная</a>
+        <a href="subs-lite.html">Подписки</a>
+        <a href="advices.html">Советы</a>
+    </nav>
+    <a href="pro-version.html" class="cta-button">Pro-версия</a>
+</header>
+
+<main>
+    <section class="dashboard">
+        <h1 id="welcome-message">Добрый день!</h1>
+        <p class="section-subtitle">Вот краткая сводка по вашим финансам.</p>
+
+        <!-- КОНТЕЙНЕР ДЛЯ СТАТИСТИКИ ПО БАНКАМ -->
+        <div class="bank-stats-grid" id="bank-stats-container">
+            <!-- JavaScript заполнит этот блок... -->
+        </div>
+    </section>
+</main>
+
+<!-- МОДАЛЬНОЕ ОКНО (изначально скрыто) -->
+<div class="modal-overlay" id="transactions-modal" style="display: none;">
+    <div class="modal-content">
+        <h3 id="modal-title">Транзакции</h3>
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+        <div class="modal-body" id="modal-body-content">
+            <!-- JavaScript заполнит этот блок... -->
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

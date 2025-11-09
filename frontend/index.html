@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplyt - Контролируйте все свои расходы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- =========== ШАПКА САЙТА =========== -->
+<header class="main-header">
+    <div class="logo">Simply<span class="logo-green">t</span></div>
+    <nav class="main-nav">
+        <a href="#how-it-works">Как работает?</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="pro-version.html">Pro-версия</a> <!-- Ссылка на страницу Pro -->
+    </nav>
+    <!-- V V V ГЛАВНОЕ ИЗМЕНЕНИЕ V V V -->
+    <!-- Теперь эта кнопка ведет на страницу входа -->
+    <a href="login.html" class="cta-button">Начать анализ</a>
+    <!-- ^ ^ ^ КОНЕЦ ИЗМЕНЕНИЯ ^ ^ ^ -->
+</header>
+
+<main>
+    <!-- =========== ГЛАВНЫЙ ЭКРАН (HERO) =========== -->
+    <section class="hero">
+        <h1>Контролируйте все свои расходы</h1>
+
+        <div class="hero-image-container">
+            <div class="hero-image-bg"></div>
+            <img src="images/hero-illustration.png" alt="Аналитика подписок на экране" class="hero-image">
+        </div>
+    </section>
+
+    <!-- =========== КАК РАБОТАЕТ? =========== -->
+    <section id="how-it-works" class="how-it-works">
+        <!-- ... (содержимое секции остается без изменений) ... -->
+        <h2>как работает?</h2>
+        <!-- СТАНЕТ -->
+        <div class="wavy-line">
+            <svg width="100%" height="100%" viewBox="0 0 1440 40" preserveAspectRatio="none">
+                <path d="M0,20 C240,35 480,5 720,20 S1200,5 1440,20"
+                      stroke="#a3e635"
+                      stroke-width="5"
+                      fill="none"
+                      stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="how-it-works-grid">
+            <div class="grid-item">
+                <h3>Simplyt - Ваш личный финансовый аналитик</h3>
+                <p>Вы получаете наглядный отчет со всеми вашими подписками в одном месте.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Найдем все ваши платные подписки и покажем, как на них сэкономить.</h3>
+                <p>Больше не нужно ничего вспоминать или искать в разных приложениях.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== ПРЕИМУЩЕСТВА =========== -->
+    <section id="advantages" class="advantages">
+        <!-- ... (содержимое секции остается без изменений) ... -->
+        <h2>преимущества</h2>
+        <p class="section-subtitle">Ваш комфорт и выгода — наш главный приоритет. Мы создали сервис, который работает на вас.</p>
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <div class="icon">🔔</div>
+                <h3>никаких сюрпризов</h3>
+                <p>Мы заранее предупредим о предстоящем списании денег, чтобы вы могли вовремя отменить ненужную подписку.</p>
+            </div>
+            <div class="advantage-card">
+                <div class="icon">👻</div>
+                <h3>никаких “призрачных” списаний</h3>
+                <p>Находим те самые подписки, о которых вы давно забыли, но которые продолжают незаметно списывать деньги.</p>
+            </div>
+            <div class="advantage-card">
+                <div class="icon">🔒</div>
+                <h3>безопасность</h3>
+                <p>Мы не храним ваши логины и пароли. Подключение происходит через безопасный шлюз банка.</p>
+            </div>
+        </div>
+        <div class="advantages-image-container">
+            <img src="images/security.jpg" alt="Безопасность данных" class="advantages-image">
+        </div>
+    </section>
+
+    <!-- =========== СВЯЗЬ С НАМИ =========== -->
+    <!-- СТАНЕТ -->
+    <section id="contact" class="contact">
+        <h2>связь с нами</h2>
+        <!-- Новый контейнер для двухколоночной сетки -->
+        <div class="contact-grid">
+            <p class="our-telegram">наши telegram:</p>
+            <div class="telegram-list">
+                <a href="https://t.me/deftexes" target="_blank">@deftexes</a>
+                <a href="https://t.me/gangspong" target="_blank">@gangspong</a>
+                <a href="https://t.me/ksushiniia" target="_blank">@ksushiniia</a>
+                <a href="https://t.me/qleafye" target="_blank">@qleafye</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- =========== ПОДВАЛ (FOOTER) =========== -->
+<footer class="main-footer">
+    <!-- ... (содержимое подвала остается без изменений) ... -->
+    <div class="logo-footer">Simply<span class="logo-green">t</span></div>
+    <div class="footer-text">
+        <span>© Simplyt. 2025</span>
+        <span>Все права защищены.</span>
+    </div>
+</footer>
+
+</body>
+</html>
