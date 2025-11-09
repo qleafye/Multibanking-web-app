@@ -1,23 +1,20 @@
 {
+  "ПОДПИСКИ": {
+    "name": "Общие подписки",
+    "monthly_cost": 0,
+    "logo_url": "data:image/png;base64,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",
+    "alternatives": [],
+    "hacks": []
+  },
   "YANDEX.PLUS": {
     "name": "Яндекс.Плюс",
     "monthly_cost": 299,
-    "logo_url": "https://example.com/yandex.png",
+    "logo_url": "https://brands-prod.cdn-tinkoff.ru/general_logo/plus-yandex-n-3.png",
     "alternatives": [
       {
         "name": "VK Комбо",
         "cost": 169,
         "pitch": "Значительно дешевле и включает скидки на такси, доставку еды и другие сервисы."
-      },
-      {
-        "name": "СберПрайм",
-        "cost": 199,
-        "pitch": "Выгоднее, если вы пользуетесь сервисами Сбера. Включает онлайн-кинотеатр Okko и музыкальный сервис Звук."
-      },
-      {
-        "name": "МТС Premium",
-        "cost": 249,
-        "pitch": "Предлагает 50 ГБ мобильного интернета, подписку на МТС Music и онлайн-кинотеатр KION."
       }
     ],
     "hacks": [
@@ -25,668 +22,54 @@
         "name": "Годовой тариф",
         "saving_per_month": 132,
         "pitch": "Приобретите годовую подписку за 1990₽ и экономьте 132₽ каждый месяц!"
-      },
-      {
-        "name": "Семейный Плюс Мульти",
-        "saving_per_month": 0,
-        "pitch": "Подключите до 3 близких к своей подписке без дополнительной платы. Экономия для всей семьи!"
-      },
-      {
-        "name": "Студенческая подписка",
-        "saving_per_month": 200,
-        "pitch": "Студенты могут оформить подписку всего за 99₽ в месяц."
       }
     ]
   },
   "SBERPRIME": {
     "name": "СберПрайм",
     "monthly_cost": 199,
-    "logo_url": "https://example.com/sberprime.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Плюс",
-        "cost": 299,
-        "pitch": "Более широкий выбор фильмов и сериалов в Кинопоиске, а также кэшбэк баллами в сервисах Яндекса."
-      },
-      {
-        "name": "VK Комбо",
-        "cost": 169,
-        "pitch": "Дешевле и предлагает скидки на такси, еду и другие сервисы VK."
-      },
-      {
-        "name": "Тинькофф Pro",
-        "cost": 299,
-        "pitch": "Предлагает повышенный кэшбэк, увеличенные лимиты на переводы и бесплатное обслуживание карт."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 32,
-        "pitch": "Оформите подписку на год за 1990₽ и экономьте 32₽ в месяц."
-      },
-      {
-        "name": "Пробный период",
-        "saving_per_month": 199,
-        "pitch": "Для новых пользователей доступен пробный период на 30 дней за 1₽."
-      }
-    ]
+    "logo_url": "https://i.imgur.com/sber-logo.png",
+    "alternatives": [],
+    "hacks": []
   },
-  "VK_COMBO": {
+  "VK COMBO": {
     "name": "VK Комбо",
     "monthly_cost": 169,
-    "logo_url": "https://example.com/vk_combo.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Плюс",
-        "cost": 299,
-        "pitch": "Включает более популярный сервис Кинопоиск и кэшбэк баллами в экосистеме Яндекса."
-      }
-    ],
+    "logo_url": "data:image/png;base64,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",
+    "alternatives": [],
     "hacks": [
       {
-        "name": "Студенческая подписка",
-        "saving_per_month": 94,
-        "pitch": "Студенты могут оформить подписку всего за 75₽ в месяц."
-      },
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 29,
-        "pitch": "Иногда появляются акции с годовой подпиской по выгодной цене, следите за предложениями."
+        "name": "Используйте все возможности",
+        "saving_per_month": 0,
+        "pitch": "VK Комбо является очень выгодным предложением. Убедитесь, что вы используете все его преимущества: скидки на еду, такси и каршеринг, чтобы получить максимум выгоды."
       }
     ]
   },
   "MTS_PREMIUM": {
     "name": "МТС Premium",
     "monthly_cost": 249,
-    "logo_url": "https://example.com/mts_premium.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Плюс",
-        "cost": 299,
-        "pitch": "Более обширная библиотека фильмов и сериалов на Кинопоиске."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 82,
-        "pitch": "Оформите подписку на год за 1990₽ и экономьте около 82₽ в месяц."
-      }
-    ]
+    "logo_url": "https://i.imgur.com/mts-logo.png",
+    "alternatives": [],
+    "hacks": []
   },
   "IVI.RU": {
     "name": "Иви",
     "monthly_cost": 399,
-    "logo_url": "https://example.com/ivi.png",
-    "alternatives": [
-      {
-        "name": "Кинопоиск HD",
-        "cost": 0,
-        "pitch": "Уже включен в вашу подписку Яндекс.Плюс!"
-      },
-      {
-        "name": "Okko",
-        "cost": 0,
-        "pitch": "Входит в подписку СберПрайм, которая может быть для вас выгоднее."
-      },
-      {
-        "name": "KION",
-        "cost": 249,
-        "pitch": "Дешевле и предлагает много оригинального контента."
-      }
-    ],
+    "logo_url": "data:image/jpeg;base64,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",
+    "alternatives": [],
     "hacks": [
       {
-        "name": "Годовая подписка",
-        "saving_per_month": 166,
-        "pitch": "Приобретайте годовую подписку за 2790₽ и экономьте 166₽ ежемесячно."
-      },
-      {
-        "name": "Промокоды",
-        "saving_per_month": 399,
-        "pitch": "Часто можно найти промокоды на бесплатный период от 30 до 90 дней для новых пользователей."
-      }
-    ]
-  },
-  "OKKO": {
-    "name": "Okko",
-    "monthly_cost": 399,
-    "logo_url": "https://example.com/okko.png",
-    "alternatives": [
-      {
-        "name": "Кинопоиск HD",
-        "cost": 0,
-        "pitch": "Уже есть в вашей подписке Яндекс.Плюс."
-      },
-      {
-        "name": "Иви",
-        "cost": 399,
-        "pitch": "Предлагает схожую по объему библиотеку контента."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Подписка СберПрайм",
-        "saving_per_month": 200,
-        "pitch": "Okko входит в подписку СберПрайм за 199₽, что значительно выгоднее."
-      },
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 166,
-        "pitch": "Годовая подписка стоит 2790₽, экономя 166₽ в месяц."
-      }
-    ]
-  },
-  "PREMIER": {
-    "name": "Premier",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/premier.png",
-    "alternatives": [
-      {
-        "name": "Start",
-        "cost": 299,
-        "pitch": "Фокусируется на российских сериалах и фильмах, может предложить более интересный вам контент."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
+        "name": "Годовой тариф",
         "saving_per_month": 149,
-        "pitch": "Приобретите годовую подписку за 1799₽, экономя 149₽ в месяц."
-      }
-    ]
-  },
-  "START": {
-    "name": "Start",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/start.png",
-    "alternatives": [
-      {
-        "name": "Premier",
-        "cost": 299,
-        "pitch": "Также специализируется на российском контенте и может стать хорошей альтернативой."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 82,
-        "pitch": "Годовая подписка обойдется в 2599₽, что позволяет экономить 82₽ в месяц."
-      }
-    ]
-  },
-  "YANDEX.MUSIC": {
-    "name": "Яндекс.Музыка",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/yandex_music.png",
-    "alternatives": [
-      {
-        "name": "VK Музыка",
-        "cost": 169,
-        "pitch": "Значительно дешевле и интегрирована в популярную социальную сеть."
-      },
-      {
-        "name": "Звук",
-        "cost": 199,
-        "pitch": "Дешевле и входит в подписку СберПрайм."
-      },
-      {
-        "name": "МТС Music",
-        "cost": 169,
-        "pitch": "Выгодная цена и интеграция с сервисами МТС."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Входит в Яндекс.Плюс",
-        "saving_per_month": 0,
-        "pitch": "Яндекс.Музыка является частью подписки Яндекс.Плюс, которая также дает доступ к Кинопоиску и кэшбэку в сервисах Яндекса."
-      }
-    ]
-  },
-  "VK_MUSIC": {
-    "name": "VK Музыка",
-    "monthly_cost": 169,
-    "logo_url": "https://example.com/vk_music.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Музыка",
-        "cost": 299,
-        "pitch": "Предлагает более продвинутые алгоритмы рекомендаций и является частью большой экосистемы."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Входит в VK Комбо",
-        "saving_per_month": 0,
-        "pitch": "Является частью подписки VK Комбо, которая также предоставляет скидки на такси и доставку еды."
-      },
-      {
-        "name": "Студенческая подписка",
-        "saving_per_month": 94,
-        "pitch": "Для студентов стоимость подписки составляет всего 75₽ в месяц."
-      }
-    ]
-  },
-  "SBERZVUK": {
-    "name": "Звук",
-    "monthly_cost": 199,
-    "logo_url": "https://example.com/sberzvuk.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Музыка",
-        "cost": 299,
-        "pitch": "Обладает более широкой фонотекой и продвинутыми рекомендациями."
-      },
-      {
-        "name": "VK Музыка",
-        "cost": 169,
-        "pitch": "Дешевле и интегрирована в социальную сеть ВКонтакте."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Входит в СберПрайм",
-        "saving_per_month": 0,
-        "pitch": "Сервис является частью подписки СберПрайм, что делает его бесплатным для подписчиков."
-      }
-    ]
-  },
-  "YANDEX.GO_PLUS": {
-    "name": "Яндекс Go с опцией Плюс",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/yandex_go.png",
-    "alternatives": [
-      {
-        "name": "Ситимобил с VK Комбо",
-        "cost": 169,
-        "pitch": "Дает скидку 10% на поездки в Ситимобил в рамках более дешевой подписки VK Комбо."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Кэшбэк баллами",
-        "saving_per_month": 0,
-        "pitch": "Получайте кэшбэк до 10% баллами за поездки, которые можно тратить на другие сервисы Яндекса."
-      }
-    ]
-  },
-  "DELIMOBIL_SUBSCRIBE": {
-    "name": "Подписка Делимобиль",
-    "monthly_cost": 390,
-    "logo_url": "https://example.com/delimobil.png",
-    "alternatives": [
-      {
-        "name": "BelkaCar BelkaSmart",
-        "cost": 349,
-        "pitch": "Дешевле и предлагает 15% кэшбэк бонусами за каждую поездку."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Пробный период",
-        "saving_per_month": 390,
-        "pitch": "Первые 7 дней подписки предоставляются бесплатно."
-      }
-    ]
-  },
-  "BELKACAR_SUBSCRIBE": {
-    "name": "BelkaCar BelkaSmart",
-    "monthly_cost": 349,
-    "logo_url": "https://example.com/belkacar.png",
-    "alternatives": [
-      {
-        "name": "Делимобиль",
-        "cost": 390,
-        "pitch": "Предлагает бесплатное завершение поездок в аэропортах."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Сотрудничество с МТС Premium",
-        "saving_per_month": 0,
-        "pitch": "Подписчики МТС Premium получают скидку 10% на поминутную аренду и 30% на страховку."
-      }
-    ]
-  },
-  "SCOOTER.WHOOSH": {
-    "name": "Подписка Whoosh",
-    "monthly_cost": 249,
-    "logo_url": "https://example.com/whoosh.png",
-    "alternatives": [
-      {
-        "name": "Подписка Юрент",
-        "cost": 149,
-        "pitch": "Дешевле и также предлагает бесплатный старт."
-      },
-      {
-        "name": "Яндекс Go Самокаты",
-        "cost": 0,
-        "pitch": "Бесплатный старт на самокаты уже включен в вашу подписку Яндекс.Плюс."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Бесплатный старт",
-        "saving_per_month": 0,
-        "pitch": "Подписка убирает плату за старт (обычно 50₽), что выгодно при частых коротких поездках."
-      },
-      {
-        "name": "Увеличенное время бронирования",
-        "saving_per_month": 0,
-        "pitch": "Бесплатное бронирование самоката увеличено до 20 минут."
-      },
-      {
-        "name": "Недельная подписка",
-        "saving_per_month": 0,
-        "pitch": "Для нерегулярных поездок можно оформить подписку на неделю за 199 рублей."
-      }
-    ]
-  },
-  "YANDEX.PRIEM": {
-    "name": "Яндекс Приём",
-    "monthly_cost": 13000,
-    "logo_url": "https://example.com/priem.png",
-    "alternatives": [
-      {
-        "name": "Level Kitchen",
-        "cost": 14000,
-        "pitch": "Предлагает более разнообразные программы питания, включая детокс и спортивные рационы."
-      },
-      {
-        "name": "Grow Food",
-        "cost": 11000,
-        "pitch": "Более бюджетный вариант с простыми и понятными тарифами для контроля веса."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Промокод на первый заказ",
-        "saving_per_month": 0,
-        "pitch": "Часто предлагает скидки до 15% на первый заказ рациона."
-      }
-    ]
-  },
-  "LEVEL_KITCHEN": {
-    "name": "Level Kitchen",
-    "monthly_cost": 14000,
-    "logo_url": "https://example.com/levelkitchen.png",
-    "alternatives": [
-      {
-        "name": "Grow Food",
-        "cost": 11000,
-        "pitch": "Значительно дешевле, если вам не нужны сложные программы питания."
-      },
-      {
-        "name": "Яндекс Приём",
-        "cost": 13000,
-        "pitch": "Сравнимая по качеству альтернатива, интегрированная в экосистему Яндекса."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Скидки на длинные подписки",
-        "saving_per_month": 0,
-        "pitch": "Предоставляет скидки при заказе питания сразу на несколько недель."
-      }
-    ]
-  },
-  "GROW_FOOD": {
-    "name": "Grow Food",
-    "monthly_cost": 11000,
-    "logo_url": "https://example.com/growfood.png",
-    "alternatives": [
-      {
-        "name": "Яндекс Приём",
-        "cost": 13000,
-        "pitch": "Предлагает более разнообразное меню и интеграцию с сервисами Яндекса."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Программа лояльности",
-        "saving_per_month": 0,
-        "pitch": "Накапливайте баллы и оплачивайте ими до 50% следующих заказов."
-      }
-    ]
-  },
-  "X5.PAKET": {
-    "name": "Пакет от X5",
-    "monthly_cost": 199,
-    "logo_url": "https://example.com/x5paket.png",
-    "alternatives": [
-      {
-        "name": "Магнит Плюс",
-        "cost": 149,
-        "pitch": "Дешевле и предлагает повышенные бонусы за покупки в магазинах 'Магнит'."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Повышенный кэшбэк",
-        "saving_per_month": 0,
-        "pitch": "Дает 5% кэшбэка баллами в 'Пятёрочке' и 'Перекрёстке', 50% на кофе и 20% на выпечку и готовую еду."
-      },
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 66,
-        "pitch": "Годовая подписка стоит 1599₽ (около 133₽ в месяц)."
-      },
-      {
-        "name": "Пробный период",
-        "saving_per_month": 198,
-        "pitch": "Первый месяц подписки можно подключить за 1₽ с промокодом."
-      }
-    ]
-  },
-  "MAGNIT_PLUS": {
-    "name": "Магнит Плюс",
-    "monthly_cost": 149,
-    "logo_url": "https://example.com/magnit.png",
-    "alternatives": [
-      {
-        "name": "Пакет от X5",
-        "cost": 199,
-        "pitch": "Более дорогой, но дает кэшбэк в двух крупных сетях ('Пятёрочка', 'Перекрёсток') и бесплатную доставку."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Повышенные бонусы",
-        "saving_per_month": 0,
-        "pitch": "Увеличивает базовый кэшбэк в 5 раз (до 2%) и дает 20% на определенные категории товаров."
-      },
-      {
-        "name": "Пробный период",
-        "saving_per_month": 149,
-        "pitch": "Первый месяц подписки доступен за 1 рубль."
-      }
-    ]
-  },
-  "OZON.PREMIUM": {
-    "name": "Ozon Premium",
-    "monthly_cost": 199,
-    "logo_url": "https://example.com/ozon.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Маркет с Яндекс.Плюс",
-        "cost": 299,
-        "pitch": "Дает кэшбэк баллами Плюса, которые можно тратить в десятках других сервисов Яндекса."
-      },
-      {
-        "name": "МегаМаркет со СберПрайм",
-        "cost": 199,
-        "pitch": "Предлагает повышенный кэшбэк бонусами 'Спасибо', которыми можно оплатить до 99% стоимости следующих покупок."
-      },
-      {
-        "name": "Wildberries",
-        "cost": 0,
-        "pitch": "Бесплатная доставка до пунктов выдачи без подписки, но есть платная обратная доставка."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Бесплатная доставка",
-        "saving_per_month": 0,
-        "pitch": "Бесплатная курьерская доставка на заказы от 499 рублей и бесплатная доставка в пункты выдачи на любую сумму."
-      },
-      {
-        "name": "Включает KION",
-        "saving_per_month": 249,
-        "pitch": "В подписку входит доступ к онлайн-кинотеатру KION."
-      },
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 50,
-        "pitch": "Годовая подписка стоит 1790 рублей (около 149 рублей в месяц)."
-      }
-    ]
-  },
-  "YANDEX.MARKET_PLUS": {
-    "name": "Яндекс.Маркет с Яндекс.Плюс",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/yandex_market.png",
-    "alternatives": [
-      {
-        "name": "Ozon Premium",
-        "cost": 199,
-        "pitch": "Дешевле, если вам нужна только выгода на маркетплейсе и не интересны другие сервисы экосистемы."
-      },
-      {
-        "name": "МегаМаркет со СберПрайм",
-        "cost": 199,
-        "pitch": "Предлагает более выгодную систему кэшбэка бонусами 'Спасибо' (до 99% оплаты)."
-      },
-      {
-        "name": "AliExpress Россия",
-        "cost": 0,
-        "pitch": "Не имеет подписки, выгода достигается за счет купонов, распродаж и низких цен на товары напрямую из Китая."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Кэшбэк баллами Плюса",
-        "saving_per_month": 0,
-        "pitch": "Получайте кэшбэк баллами за покупку товаров со специальной отметкой. Баллы можно тратить 1 к 1 на Маркете и в других сервисах Яндекса."
-      },
-      {
-        "name": "Бесплатная доставка",
-        "saving_per_month": 0,
-        "pitch": "Бесплатная доставка курьером при заказе от 699 ₽ (в зависимости от региона)."
-      },
-      {
-        "name": "Все преимущества Яндекс.Плюс",
-        "saving_per_month": 0,
-        "pitch": "Вы получаете не только выгоду на Маркете, но и доступ к Кинопоиску, Музыке и другим сервисам."
-      }
-    ]
-  },
-  "MEGAMARKET_SBERPRIME": {
-    "name": "МегаМаркет со СберПрайм",
-    "monthly_cost": 199,
-    "logo_url": "https://example.com/megamarket.png",
-    "alternatives": [
-      {
-        "name": "Яндекс.Маркет с Яндекс.Плюс",
-        "cost": 299,
-        "pitch": "Более дорогой, но предлагает более широкую экосистему с популярными Кинопоиском и Музыкой."
-      },
-      {
-        "name": "Ozon Premium",
-        "cost": 199,
-        "pitch": "Прямой конкурент по цене, также предлагает бесплатную доставку и доступ к кинотеатру KION."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Повышенный кэшбэк 'Спасибо'",
-        "saving_per_month": 0,
-        "pitch": "Получайте повышенный кэшбэк бонусами 'Спасибо' на множество товаров. Бонусы начисляются сверх базовых."
-      },
-      {
-        "name": "Оплата бонусами до 99%",
-        "saving_per_month": 0,
-        "pitch": "Накопленными бонусами 'Спасибо' можно оплачивать до 99% стоимости новых заказов, что является уникальным предложением."
-      },
-      {
-        "name": "Все преимущества СберПрайм",
-        "saving_per_month": 0,
-        "pitch": "Включает доступ к Okko, Звуку и скидкам в других сервисах экосистемы Сбера."
-      }
-    ]
-  },
-  "TELEGRAM.PREMIUM": {
-    "name": "Telegram Premium",
-    "monthly_cost": 299,
-    "logo_url": "https://example.com/telegram.png",
-    "alternatives": [],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 132,
-        "pitch": "При оплате за год стоимость составит 1990₽, что экономит почти 45%."
-      },
-      {
-        "name": "Оплата через бота",
-        "saving_per_month": 150,
-        "pitch": "Официальная цена через App Store или Google Play - 449₽, а через официального бота @PremiumBot - 299₽."
-      }
-    ]
-  },
-  "AI.CHATGPT_PLUS": {
-    "name": "ChatGPT Plus",
-    "monthly_cost": 1800,
-    "logo_url": "https://example.com/chatgpt.png",
-    "alternatives": [],
-    "hacks": [
-      {
-        "name": "Совместная покупка",
-        "saving_per_month": 0,
-        "pitch": "Можно найти сервисы для совместной покупки подписки, что значительно снижает стоимость для одного пользователя."
-      }
-    ]
-  },
-  "AI.MIDJOURNEY": {
-    "name": "Midjourney (Basic Plan)",
-    "monthly_cost": 900,
-    "logo_url": "https://example.com/midjourney.png",
-    "alternatives": [],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 180,
-        "pitch": "Годовая подписка стоит $96 (примерно 720₽ в месяц), что дает скидку 20%."
+        "pitch": "Оплатите подписку на год вперед за 2990₽ и экономьте почти 150₽ каждый месяц!"
       }
     ]
   },
   "BANK.TINKOFF_PRO": {
     "name": "Тинькофф Pro",
     "monthly_cost": 299,
-    "logo_url": "https://example.com/tinkoff.png",
-    "alternatives": [
-      {
-        "name": "СберПрайм",
-        "cost": 199,
-        "pitch": "Дешевле и включает доступ к Okko и Звук, а также скидки в сервисах экосистемы Сбера."
-      }
-    ],
-    "hacks": [
-      {
-        "name": "Годовая подписка",
-        "saving_per_month": 132,
-        "pitch": "Годовая подписка стоит 1990₽ (примерно 166₽ в месяц), что на 44% дешевле помесячной оплаты."
-      },
-      {
-        "name": "Пробный период",
-        "saving_per_month": 299,
-        "pitch": "Первый месяц подписки для новых пользователей предоставляется бесплатно."
-      },
-      {
-        "name": "Бесплатное обслуживание карт",
-        "saving_per_month": 99,
-        "pitch": "Делает обслуживание карты Tinkoff Black бесплатным (вместо 99₽/мес) и дает скидку на другие карты."
-      }
-    ]
+    "logo_url": "https://i.imgur.com/tinkoff-logo.png",
+    "alternatives": [],
+    "hacks": []
   }
 }

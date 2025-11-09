@@ -4,52 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Найденные подписки - Simplyt</title>
-    <!-- Подключаем тот же самый файл стилей -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- Шапка такая же, как на главной странице, для консистентности -->
 <header class="main-header">
     <div class="logo">Simply<span class="logo-green">t</span></div>
     <nav class="main-nav">
         <a href="main-lite.html">Главная</a>
         <a href="subs-lite.html">Подписки</a>
-        <a href="#">Советы</a>
+        <a href="advices.html">Советы</a>
     </nav>
-    <a href="#" class="cta-button">Pro-версия</a>
+    <a href="pro-version.html" class="cta-button">Pro-версия</a>
 </header>
 
 <main>
-    <!-- =========== СЕКЦИЯ РЕЗУЛЬТАТОВ =========== -->
     <section class="results">
         <h1>Найденные подписки</h1>
-        <p class="section-subtitle">Мы проанализировали ваши транзакции и нашли следующие активные сервисы.</p>
+        <p class="section-subtitle">Выберите банки для отображения подписок.</p>
 
-        <!--
-            Это ГЛАВНЫЙ контейнер.
-            Он пустой, потому что наш скрипт subs.js найдет его по ID
-            и сам заполнит карточками подписок.
-        -->
-        <div class="subscriptions-grid" id="subscriptions-container">
-            <!-- JavaScript добавит сюда карточки... -->
+        <!-- ФИЛЬТР БАНКОВ -->
+        <div class="bank-filter-container">
+            <h4>Выберите банки для анализа:</h4>
+            <div class="checkbox-group">
+                <!-- ИЗМЕНЕНИЕ ЗДЕСЬ -->
+                <label><input type="checkbox" class="bank-checkbox" value="xbank" checked> XBank</label>
+                <label><input type="checkbox" class="bank-checkbox" value="abank" checked> ABank</label>
+                <label><input type="checkbox" class="bank-checkbox" value="vbank" checked> VBank</label>
+                <label><input type="checkbox" class="bank-checkbox" value="sbank" checked> SBank</label>
+            </div>
+            <div class="filter-options">
+                <label><input type="checkbox" id="named-only-checkbox"> Показывать только именованные</label>
+            </div>
+        </div>
+
+        <!-- КОНТЕЙНЕР ДЛЯ СГРУППИРОВАННЫХ ПОДПИСОК -->
+        <div class="subscriptions-grouped-container" id="subscriptions-container">
+            <!-- JavaScript заполнит этот блок... -->
         </div>
     </section>
 </main>
 
-<!-- Подвал -->
-<footer class="main-footer">
-    <div class="logo-footer">Simply<span class="logo-green">t</span></div>
-    <div class="footer-text">
-        <span>© Simplyt. 2025</span>
-        <span>Ни одни права не защищены.</span>
-    </div>
-</footer>
-
-<!-- Подключаем скрипт, который отвечает за эту страницу -->
 <script src="subs.js"></script>
 
 </body>

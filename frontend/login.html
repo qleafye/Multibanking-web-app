@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Simplyt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 <body>
-$END$
+<main class="auth-container">
+    <div class="auth-card">
+        <h1>Simply<span class="logo-green">t</span></h1>
+        <p class="subtitle">Войдите, используя логин или почту</p>
+        <form id="loginForm" class="auth-form">
+            <input type="text" id="username" placeholder="Логин">
+            <input type="password" id="password" placeholder="Пароль">
+            <button type="submit" class="primary-button">Войти</button>
+        </form>
+        <div class="auth-footer">
+            <a href="registration.html">стать клиентом</a>
+            <a href="#">забыли пароль?</a>
+        </div>
+    </div>
+</main>
+<script src="auth.js"></script>
 </body>
 </html>

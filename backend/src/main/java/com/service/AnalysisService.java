@@ -14,7 +14,7 @@ public class AnalysisService {
 
     // Список клиентов, чьи данные мы хотим проанализировать.
     // Для MVP сфокусируемся на студенте, но можем добавить и других.
-    private final List<String> targetClientIds = List.of("team100-5"); // 5 - это студент
+    private final List<String> targetClientIds = List.of("team100-5");
 
     public AnalysisService(List<BankClient> bankClients) {
         this.bankClients = bankClients;

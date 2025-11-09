@@ -5,12 +5,14 @@ public class Transaction {
     private String description;
     private double amount;
     private String date;
+    private String bankName;
 
     // Конструкторы, геттеры и сеттеры
-    public Transaction(String description, double amount, String date) {
+    public Transaction(String description, double amount, String date, String bankName) { // <-- ОБНОВЛЕННЫЙ КОНСТРУКТОР
         this.description = description;
         this.amount = amount;
         this.date = date;
+        this.bankName = bankName; // <-- ДОБАВЛЕНО
     }
 
     public String getDescription() {
@@ -36,4 +38,8 @@ public class Transaction {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getBankName() { return bankName; }
+
+    public void setBankName(String bankName) { this.bankName = bankName; }
 }

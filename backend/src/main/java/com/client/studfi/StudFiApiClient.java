@@ -42,7 +42,7 @@ public class StudFiApiClient implements BankClient {
     @Override
     public String getBankName() {
         // Это имя будет использоваться в ?banks=studfi
-        return "studfi";
+        return "XBank";
     }
 
     @Override
@@ -175,6 +175,10 @@ public class StudFiApiClient implements BankClient {
         } catch (Exception e) { System.err.println("StudFi: ОШИБКА ПОЛУЧЕНИЯ БАЛАНСА для счета " + accountId + "! " + e.getMessage()); return Optional.empty(); }
     }
 
+    // В файле StudFiApiClient.java
+
+    // В файле StudFiApiClient.java
+
     private List<Transaction> getTransactions(String token, String consentId, String endUserClientId, String accountId) {
         String transactionsUrl = UriComponentsBuilder.fromHttpUrl(baseUrl + "/accounts/" + accountId + "/transactions").queryParam("client_id", endUserClientId).toUriString();
         HttpEntity<Void> requestEntity = buildHttpEntity(token, consentId);
@@ -183,14 +187,22 @@ public class StudFiApiClient implements BankClient {
             List<StudFiTransactionDto> bankTransactions = response.getBody().getData().getTransaction();
             if (bankTransactions == null) return Collections.emptyList();
             System.out.println("StudFi: Для счета " + accountId + " получено транзакций: " + bankTransactions.size());
+
+            // --- ВОТ ПРАВИЛЬНАЯ И ПРОСТАЯ ЛОГИКА ---
             return bankTransactions.stream()
                     .map(bankDto -> new Transaction(
                             bankDto.getTransactionInformation(),
+                            // Просто парсим сумму, она уже будет с правильным знаком
                             Double.parseDouble(bankDto.getAmount().getAmount()),
-                            bankDto.getBookingDateTime()
+                            bankDto.getBookingDateTime(),
+                            getBankName()
                     ))
                     .collect(Collectors.toList());
-        } catch (Exception e) { System.err.println("StudFi: ОШИБКА ПОЛУЧЕНИЯ ТРАНЗАКЦИЙ для счета " + accountId + "! " + e.getMessage()); return Collections.emptyList(); }
+
+        } catch (Exception e) {
+            System.err.println("StudFi: ОШИБКА ПОЛУЧЕНИЯ ТРАНЗАКЦИЙ для счета " + accountId + "! " + e.getMessage());
+            return Collections.emptyList();
+        }
     }
 
     private HttpEntity<Void> buildHttpEntity(String token, String consentId) {

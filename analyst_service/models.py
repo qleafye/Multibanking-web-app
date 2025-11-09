@@ -40,11 +40,10 @@ class PotentialSaving(BaseModel):
     saving_amount: float  # Сколько можно сэкономить
 
 class Subscription(BaseModel):
-    """Модель найденной подписки."""
-    name: str  # Человекочитаемое название (например, "Яндекс.Плюс")
-    monthly_cost: float  # Стоимость подписки в месяц
-    logo_url: str  # URL логотипа сервиса
-    # Делаем это поле опциональным, чтобы его не было в free-режиме
+    name: str
+    monthly_cost: float
+    logo_url: str
+    date: str  # <-- ДОБАВЛЕНО ЭТО ПОЛЕ
     potential_savings: PotentialSaving | None = None
 
 class ProSuggestion(BaseModel):

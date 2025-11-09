@@ -186,11 +186,27 @@ public class ABankApiClient implements BankClient {
             if (bankTransactions == null) return Collections.emptyList();
             System.out.println("ABank: Для счета " + accountId + " получено транзакций: " + bankTransactions.size());
             return bankTransactions.stream()
-                    .map(bankDto -> new Transaction(
-                            bankDto.getTransactionInformation(),
-                            Double.parseDouble(bankDto.getAmount().getAmount()),
-                            bankDto.getBookingDateTime()
-                    ))
+                    .map(bankDto -> {
+                        // 1. Сначала получаем сумму. Она всегда положительная.
+                        double amount = Double.parseDouble(bankDto.getAmount().getAmount());
+
+                        // 2. Проверяем, является ли транзакция списанием.
+                        //    ВАЖНО: Имя метода getCreditDebitIndicator() — это ПРЕДПОЛОЖЕНИЕ.
+                        //    Нужно найти в классе ABankTransactionDto правильное имя метода,
+                        //    который возвращает "Debit" или "Credit".
+                        if ("Debit".equalsIgnoreCase(bankDto.getCreditDebitIndicator())) {
+                            // 3. Если это списание, делаем сумму отрицательной
+                            amount = -amount;
+                        }
+
+                        // 4. Возвращаем новый объект Transaction с уже правильным знаком суммы
+                        return new Transaction(
+                                bankDto.getTransactionInformation(),
+                                amount,
+                                bankDto.getBookingDateTime(),
+                                getBankName()
+                        );
+                    })
                     .collect(Collectors.toList());
         } catch (Exception e) { System.err.println("ABank: ОШИБКА ПОЛУЧЕНИЯ ТРАНЗАКЦИЙ для счета " + accountId + "! " + e.getMessage()); return Collections.emptyList(); }
     }

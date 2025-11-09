@@ -12,6 +12,16 @@ public class SBankTransactionDto {
     // Предполагаем, что дата называется "bookingDateTime"
     private String bookingDateTime;
 
+    private String creditDebitIndicator;
+
+    public String getCreditDebitIndicator() {
+        return creditDebitIndicator;
+    }
+
+    public void setCreditDebitIndicator(String creditDebitIndicator) {
+        this.creditDebitIndicator = creditDebitIndicator;
+    }
+
     // --- Геттеры и сеттеры для новых полей ---
     public String getTransactionInformation() { return transactionInformation; }
     public void setTransactionInformation(String transactionInformation) { this.transactionInformation = transactionInformation; }
